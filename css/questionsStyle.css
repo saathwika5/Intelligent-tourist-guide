@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+*{
+	margin: 0;
+	padding: 6px;
+}
+.container{
+	width: 100%;
+	min-height: 100vh;
+	padding-left: 8%;
+	padding-right: 8%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #ffffff;
+	font-family: Satisfy;
+	/* position: -webkit-sticky; */
+	/* position: sticky; */
+	top: 0;
+}
+h1 {
+	font-family: Satisfy;
+	font-size: 35px;
+	color: black;
+}
+.logo{
+	width: 60px;
+	cursor: pointer;
+	margin: 30px 0;
+}
+.menu-icon{
+	width: 25px;
+	cursor: pointer;
+	display: none;
+}
+nav{
+	flex: 1;
+	text-align: right;
+}
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 30px;
+}
+nav ul li a{
+	text-decoration: none;
+	font-family: 'Oswald', sans-serif;
+	color: #000;
+	font-size: 25px;
+}
+nav ul li a:hover{
+	color: #1a8cff;
+}
+@media only screen and (max-width: 700px) {
+  
+	nav ul{
+		width: 100%;
+		background: #1a8cff;
+		position: absolute;
+		top: 75px;
+		right: 0;
+		z-index: 2;
+	}
+	
+	nav ul li{
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	nav ul li a{
+		color: #fff;
+	}
+	
+	.menu-icon{
+		display: block;
+	}
+}
+a:link {
+	color: #4a1cb8;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+  a:visited {
+	color: #390992;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+  a:hover {
+	color: #13053a;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  a:active {
+	color: #360585;
+	background-color: transparent;
+	text-decoration: none;
+  }
+
+  .grid {
+    width: 90%;
+    height: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #cbcbcb;
+    box-shadow: 10px 15px 5px #cbcbcb;
+    }
+    
+    .buttons img
+    {
+    width:  500px;
+    height: 300px;
+    object-fit: cover;
+    }
+    .grid h1 {
+    font-family: "sans-serif";
+    background-color: #0e0d0b;
+    font-size: 35px;
+    text-align: center;
+    color: #ffffff;
+    padding: 2px 0px;
+    border-radius: 50px;
+    }
+    hr
+    {
+    margin-top: 50px;
+        color: red;
+        background-color: #ffc107;
+        height: 2px;
+        border: none;
+    }
+    #score {
+    color: #080807;
+    text-align: center;
+    font-size: 30px;
+    }
+    
+    .grid #question {
+    font-family: "Patrick Hand";
+    font-size: 30px;
+    color: #0c0b0a;
+    }
+    
+    .buttons {
+    margin-top: 30px;
+    }
+    
+    #btn0,
+    #btn1,
+    #btn2,
+    #btn3 {
+    
+        padding: 0px;
+    font-size: 20px;
+    color: #fff;
+        border: none;
+    margin: 10px 20px 10px 0px;
+    
+    }
+    
+    #btn0:hover,
+    #btn1:hover,
+    #btn2:hover,
+    #btn3:hover {
+    cursor: pointer;
+    background-color: #ffc107;
+    }
+    
+    #btn0:focus,
+    #btn1:focus,
+    #btn2:focus,
+    #btn3:focus {
+    outline: 0;
+    }
+    
+    #progress {
+    color: #2b2b2b;
+    font-size: 18px;
+    }
+

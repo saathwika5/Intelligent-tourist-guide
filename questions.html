@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>
+            Questions
+        </title>
+
+        <link href="css/questionsStyle.css" rel="stylesheet">
+  		<link rel="icon" href="images/favicon2.ico"/>
+
+    </head>
+
+    <body>
+        <div class="navbar">
+            <img src = "images/logo.png" class="logo">
+            <a href="home.html"><h1><b>Intelligent Tourist Guide</b></h1></a>
+            <!-- <nav>
+                <ul class="list-inline">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="quiz.html">Login</a></li>
+                </ul>
+            </nav> -->
+            <img src = "images/menu.png" class="menu-icon">
+        </div>
+
+        <div class="grid">
+            <div id="quiz">
+            
+            <hr style="margin-bottom: 20px">
+            <p id="question"></p>
+            <div class="buttons">
+            <button id="btn0"><span id="choice0"></span></button>
+            <button id="btn1"><span id="choice1"></span></button>
+            <button id="btn2"><span id="choice2"></span></button>
+            <button id="btn3"><span id="choice3"></span></button>
+            </div>
+            <hr style="margin-top: 50px">
+    </body>
+
+    <script type="text/javascript">
+        var images = {
+        "beach"  : "images/beach.jpeg",
+        "temple" : "images/temple.jpg",
+        "mountain" : "images/mountain.jpeg",
+        "lake"   : "images/lake.jpg",
+
+        "lake1"   : "images/lake1.jpg",
+        "temple1"   : "images/temple1.jpg",
+        "mountain1"   : "images/mountain1.jpg",
+        "beach1"   : "images/beach1.jpg",
+
+        "lake2"   : "images/lake2.jpg",
+        "temple2"   : "images/temple2.jpg",
+        "mountain2"   : "images/mountain2.jpg",
+        "beach2"   : "images/beach2.jpg",
+
+        "lake3"   : "images/lake3.jpg",
+        "temple3"   : "images/temple3.jpg",
+        "mountain3"   : "images/mountain3.jpeg",
+        "beach3"   : "images/beach3.jpg",
+
+        "lake4"   : "images/lake4.jpg",
+        "temple4"   : "images/temple4.jpg",
+        "mountain4"   : "images/mountain4.jpg",
+        "beach4"   : "images/beach4.jpg",
+        
+        }  
+        function populate() {
+        if (quiz.isEnded()) {
+        showScores();
+        } else {
+        // show question
+        var element = document.getElementById("question");
+        element.innerHTML = quiz.getQuestionIndex().text;
+        
+        // show options
+        var choices = quiz.getQuestionIndex().choices;
+        for (var i = 0; i < choices.length; i++) {
+        var element = document.getElementById("choice" + i);
+        element.innerHTML = images[choices[i]]? '<img src="'+images[choices[i]]+'"/>':choices[i];
+        guess("btn" + i, choices[i]);
+        }
+        
+        showProgress();
+        }
+        };
+        
+        function guess(id, guess) {
+        var button = document.getElementById(id);
+        button.onclick = function() {
+        quiz.guess(guess);
+        populate();
+        }
+        };
+        
+        function showProgress() {
+        var currentQuestionNumber = quiz.questionIndex + 1;
+        var element = document.getElementById("progress");
+        element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
+        };
+        
+        function showScores() {
+        var gameOverHTML = "<h1>Your personalized holiday destination!</h1>";
+        if(quiz.score==5)
+        {
+            let btn = document.createElement("button");
+            btn.innerHTML = "Click Me";
+            gameOverHTML += "<center><a href=result.html><h2>RAJASTHAN</h2></a></center>"
+
+        }
+        // gameOverHTML +=  quiz.score;
+        var element = document.getElementById("quiz");
+        element.innerHTML = gameOverHTML;
+        
+        };
+        
+        // create questions
+        var questions = [
+        new Question("Pick one which appeals the most to you", ["lake", "mountain", "temple", "beach"], "temple"),
+        new Question("Pick one activity", ["mountain1", "lake1", "temple1", "beach1"], "temple1"),
+        new Question("Pick one place to stay", ["beach2", "temple2", "mountain2",  "lake2"], "temple2"),
+        new Question("Pick some food", ["temple3", "mountain3", "beach3", "lake3"], "temple3"),
+        new Question("Pick where you would go shopping for", ["mountain4", "lake4", "beach4", "temple4"], "temple4")
+        ];
+        
+        function Question(text, choices, answer) {
+        this.text = text;
+        this.choices = choices;
+        this.answer = answer;
+        }
+        
+        Question.prototype.isCorrectAnswer = function(choice) {
+        return this.answer === choice;
+        }
+        
+        
+        function Quiz(questions) {
+        this.score = 0;
+        this.questions = questions;
+        this.questionIndex = 0;
+        }
+        
+        Quiz.prototype.getQuestionIndex = function() {
+        return this.questions[this.questionIndex];
+        }
+        
+        Quiz.prototype.guess = function(answer) {
+        if (this.getQuestionIndex().isCorrectAnswer(answer)) {
+        this.score++;
+        }
+        
+        this.questionIndex++;
+        }
+        
+        Quiz.prototype.isEnded = function() {
+        return this.questionIndex === this.questions.length;
+        }
+        
+        // create quiz
+        var quiz = new Quiz(questions);
+        
+        // display quiz
+        populate();
+        </script>
+</html>

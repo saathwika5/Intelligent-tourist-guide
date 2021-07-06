@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+*{
+	margin: 0;
+	padding: 6px;
+}
+.container{
+	width: 100%;
+	min-height: 100vh;
+	padding-left: 8%;
+	padding-right: 8%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #ffffff;
+	font-family: Satisfy;
+	/* position: -webkit-sticky; */
+	/* position: sticky; */
+	top: 0;
+}
+h1 {
+	font-family: Satisfy;
+	font-size: 35px;
+	color: black;
+}
+.logo{
+	width: 60px;
+	cursor: pointer;
+	margin: 30px 0;
+}
+.menu-icon{
+	width: 25px;
+	cursor: pointer;
+	display: none;
+}
+nav{
+	flex: 1;
+	text-align: right;
+}
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 30px;
+}
+nav ul li a{
+	text-decoration: none;
+	font-family: 'Oswald', sans-serif;
+	color: #000;
+	font-size: 25px;
+}
+nav ul li a:hover{
+	color: #1a8cff;
+}
+@media only screen and (max-width: 700px) {
+  
+	nav ul{
+		width: 100%;
+		background: #1a8cff;
+		position: absolute;
+		top: 75px;
+		right: 0;
+		z-index: 2;
+	}
+	
+	nav ul li{
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	nav ul li a{
+		color: #fff;
+	}
+	
+	.menu-icon{
+		display: block;
+	}
+}
+
+a:link {
+	color: #4a1cb8;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+  a:visited {
+	color: #390992;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+  a:hover {
+	color: #13053a;
+	background-color: transparent;
+	text-decoration: none;
+  }
+  
+  a:active {
+	color: #360585;
+	background-color: transparent;
+	text-decoration: none;
+  }
+
+  .btn {
+	/* flex: 1 1 auto;
+	margin: 10px;
+	padding: 30px; */
+	text-align: center;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: #000099;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    font-family: 'Fira Sans';
+	box-shadow: 0 0 20px #eee;
+	border-radius: 10px;
+	font-size: 35px;
+   }
+  
+  /* Demo Stuff End -> */
+  
+  /* <- Magic Stuff Start */
+  
+  .btn:hover {
+	background-position: right center; /* change the direction of the change here */
+  }
+  .btn-1 {
+	background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  }  

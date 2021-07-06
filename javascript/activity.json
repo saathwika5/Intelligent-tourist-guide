@@ -1,0 +1,23 @@
+{"quizlist":[
+  
+	{
+	"question":"Which picture shows a lion?",
+	"option1":"img1.jpg",
+	"option2":"img2.jpg",
+	"option3":"img3.jpg"
+	},
+	{
+	"question":"Which picture shows a labrador?",
+	"option1":"img1.jpg",
+	"option2":"img2.jpg",
+	"option3":"img3.jpg"
+	},
+	{
+	"question":"Which picture shows a meerkat?",
+	"option1":"img1.jpg",
+	"option2":"img2.jpg",
+	"option3":"img3.jpg"
+	}
+
+]
+}
